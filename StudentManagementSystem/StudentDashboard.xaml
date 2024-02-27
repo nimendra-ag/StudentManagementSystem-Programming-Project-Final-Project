@@ -1,0 +1,147 @@
+﻿<Window x:Class="StudentManagementSystem.StudentDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudentManagementSystem"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        FontSize="18" FontFamily="{DynamicResource MaterialDesignFont}" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Title="Log In" AllowsTransparency="False" Background="Transparent" 
+        mc:Ignorable="d" Height="700" Width="900">
+
+
+    <Border CornerRadius="30" Background="#EFF2F7">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Left Section-->
+
+            <Border Background="#b8c0ff" Padding="30" CornerRadius="0 0 0 0">
+                <StackPanel>
+                    <TextBlock Margin="0 20 0 0" Text="Faculty" FontSize="45" FontWeight="Light" Foreground="#ffffff" TextAlignment="Center"/>
+                    <TextBlock Margin="0 0 0 0" Text="of" FontSize="45" FontWeight="Light" Foreground="#ffffff" TextAlignment="Center"/>
+                    <TextBlock Margin="0 0 0 0" Text="Engineering" FontSize="45" FontWeight="Light" Foreground="#ffffff" TextAlignment="Center"/>
+
+                    <StackPanel VerticalAlignment="Center" Margin="0 50 0 0">
+
+                        <Image Source="/Images/img.png" Margin="0 0 0 40" Width="160" Height="160"/>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Name="fFirstName" Margin="00 0 0 0"  HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="28" Text="{Binding FirstName}" Foreground="#363636"/>
+                            <TextBlock Name="fLastName" Margin="10 0 0 0" HorizontalAlignment="Center" FontWeight="SemiBold" FontSize="28" Text="{Binding LastName}" Foreground="#363636"/>
+                        </StackPanel>
+
+                        <Button Content="Log Out" Margin="0 80 0 0" Background="#05B790" Foreground="black" FontSize="20" materialDesign:ButtonAssist.CornerRadius="15" Height="35" Width="200"  Click="logoutButton_Click">
+
+                        </Button>
+                        <TextBlock Margin="0 5 0 0" VerticalAlignment="Center" FontSize="10" Foreground="white" HorizontalAlignment="Center">Powered by Noodle</TextBlock>
+                    </StackPanel>
+                    
+                    
+                </StackPanel>
+                
+            </Border>
+
+            <!--Right Section-->
+            <Border Grid.Column="1" Padding="20" Background="#ffffff" CornerRadius="0 0 0 0">
+
+
+                <Grid Margin="20 0 20 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.80*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="0.75*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="25 0 25 0" Grid.Row="0"  Grid.ColumnSpan="2" Grid.Column="0" Text="Student Information" VerticalAlignment="Center" FontSize="40" FontWeight="Light" Foreground="black"/>
+
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="1"  Grid.Column="0" Text="First Name" />
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="2"  Grid.Column="0" Text="Last Name" />
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="3"  Grid.Column="0" Text="User Name" />
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="4"  Grid.Column="0" Text="Password" />
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="5"  Grid.Column="0" Text="Department" />
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="6"  Grid.Column="0" Text="GPA" />
+                    <TextBlock Margin="25 0 25 0" Foreground="#363636" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="20" Grid.Row="7"  Grid.Column="0" Text="Registered Date" />
+
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="1"  Grid.Column="1">
+                        <TextBlock Text="{Binding FirstName}"
+                                   Name="firstName"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />
+                    </Border>
+
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="2"  Grid.Column="1">
+                        <TextBlock Text="{Binding LastName}"
+                                   Name="lastName"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />  
+                    </Border>
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="3"  Grid.Column="1">
+                        <TextBlock Text="{Binding StudentUserName}"
+                                   Name="userName"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />  
+                    </Border>
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="4"  Grid.Column="1">
+                        <TextBlock Text="{Binding StudentPassword}"
+                                   Name="password"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />      
+                    </Border>
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="5"  Grid.Column="1">
+                        <TextBlock Text="{Binding Department}"
+                                   Name="department"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />  
+                    </Border>
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="6"  Grid.Column="1">
+                        <TextBlock Text="{Binding GPA}"
+                                   Name="gpa"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />      
+                    </Border>
+                    <Border Background="#F5F7F9" BorderThickness="1" BorderBrush="#F5F7F9" CornerRadius="5" Padding="10 10" Margin="15 10 15 10" Grid.Row="7"  Grid.Column="1">
+                        <TextBlock Text="{Binding RegisteredDate}"
+                                   Name="registeredDate"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#767676"
+                                    />      
+                    </Border>
+                    <Button Grid.Row="8"  Grid.Column="1" Margin="0 0 0 0"  Content="Change Login Info" Background="#05B790" Foreground="#ffffff" FontSize="20" materialDesign:ButtonAssist.CornerRadius="22" Height="45" Width="200" Click="Button_Click"/>
+                </Grid>
+
+
+            </Border>
+
+
+        </Grid>
+    </Border>
+</Window>
